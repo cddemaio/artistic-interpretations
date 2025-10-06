@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Artistic Interpretations of a Wedding Scene</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .description {
+      font-size: 0.9em;
+      color: #444;
+      margin-top: 10px;
+      text-align: left;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background: #28a745;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .vote-result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Artistic Interpretations of a Wedding Scene</h1>
+    <p>Which style resonates most with you?</p>
+  </header>
+
+  <section class="gallery">
+    <!-- Original -->
+    <div class="card">
+      <h2>Original Photograph</h2>
+      <img src="Barcelona.png" alt="Original photograph of couple dancing">
+      <p class="description">
+        The original captures a couple in wedding attire dancing under a covered passageway...
+      </p>
+      <button onclick="vote('Original')">Vote for this</button>
+      <div id="Original" class="vote-result"></div>
+    </div>
+
+    <!-- Rembrandt -->
+    <div class="card">
+      <h2>Rembrandt Style</h2>
+      <img src="Rembrandt.png" alt="Rembrandt style painting">
+      <p class="description">
+        Rembrandt’s chiaroscuro emphasizes dramatic contrast and emotional intimacy...
+      </p>
+      <button onclick="vote('Rembrandt')">Vote for this</button>
+      <div id="Rembrandt" class="vote-result"></div>
+    </div>
+
+    <!-- Monet -->
+    <div class="card">
+      <h2>Monet (Impressionist) Style</h2>
+      <img src="Monet.png" alt="Monet style painting">
+      <p class="description">
+        Monet’s impressionist brushwork creates shimmering light and a dreamy atmosphere...
+      </p>
+      <button onclick="vote('Monet')">Vote for this</button>
+      <div id="Monet" class="vote-result"></div>
+    </div>
+
+    <!-- Picasso -->
+    <div class="card">
+      <h2>Picasso (Cubist) Style</h2>
+      <img src="Picasso.png" alt="Picasso style painting">
+      <p class="description">
+        The cubist version deconstructs the scene into geometric shapes and multiple perspectives...
+      </p>
+      <button onclick="vote('Picasso')">Vote for this</button>
+      <div id="Picasso" class="vote-result"></div>
+    </div>
+
+    <!-- Van Gogh -->
+    <div class="card">
+      <h2>Van Gogh Style</h2>
+      <img src="Van Gogh.png" alt="Van Gogh style painting">
+      <p class="description">
+        Van Gogh’s swirling brushstrokes and vibrant colors convey passion and movement...
+      </p>
+      <button onclick="vote('Van Gogh')">Vote for this</button>
+      <div id="Van Gogh" class="vote-result"></div>
+    </div>
+
+    <!-- Dali -->
+    <div class="card">
+      <h2>Salvador Dalí (Surrealist) Style</h2>
+      <img src="dali.png" alt="Dalí style painting">
+      <p class="description">
+        Dalí’s surrealist vision morphs architecture into dreamlike, fluid forms...
+      </p>
+      <button onclick="vote('Dali')">Vote for this</button>
+      <div id="Dali" class="vote-result"></div>
+    </div>
+  </section>
+
+  <script>
+    const votes = {Original:0, Rembrandt:0, Monet:0, Picasso:0, "Van Gogh":0, Dali:0};
+
+    function vote(style) {
+      votes[style]++;
+      document.getElementById(style).innerText = `Votes: ${votes[style]}`;
+    }
+  </script>
+</body>
+</html>
